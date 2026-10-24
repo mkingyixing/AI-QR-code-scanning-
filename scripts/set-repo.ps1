@@ -1,14 +1,14 @@
 # Replace the YOUR_GITHUB_USER placeholder with a real GitHub owner/repo.
 #
 #   powershell -File .\scripts\set-repo.ps1 -Owner yourname
-#   powershell -File .\scripts\set-repo.ps1 -Owner yourname -Repo dsh-qr-scanner
+#   powershell -File .\scripts\set-repo.ps1 -Owner yourname -Repo AI-QR-code-scanning-
 #
 # Updates package.json / README / CHANGELOG. ASCII-only on purpose:
 # Windows PowerShell 5.1 reads BOM-less UTF-8 scripts as ANSI, and the data files
 # are UTF-8 with Chinese text, so everything here goes through .NET APIs.
 param(
     [Parameter(Mandatory = $true)][string]$Owner,
-    [string]$Repo = "dsh-qr-scanner"
+    [string]$Repo = "AI-QR-code-scanning-"
 )
 
 $ErrorActionPreference = "Stop"

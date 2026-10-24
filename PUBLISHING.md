@@ -7,7 +7,7 @@
 ## 0. 发布前自检（每次发版都跑）
 
 ```powershell
-cd plugins\dsh-qr-scanner
+cd plugins\AI-QR-code-scanning-
 npm install --ignore-scripts     # 依赖已随仓库安装时跳过
 node test\run.mjs                # 14 项必须全绿
 npm pack --dry-run               # 确认打进去的文件没有多余内容
@@ -27,7 +27,7 @@ npm pack --dry-run               # 确认打进去的文件没有多余内容
 
 ## 1. 建 GitHub 仓库（必做，市场靠它收录）
 
-1. 在 GitHub 新建空仓库，名字建议 `dsh-qr-scanner`（公开）。
+1. 在 GitHub 新建空仓库，名字建议 `AI-QR-code-scanning-`（公开）。
 
    **仓库描述（About 一栏，350 字符以内）** —— 选一条粘贴：
 
@@ -55,23 +55,30 @@ npm pack --dry-run               # 确认打进去的文件没有多余内容
 4. 推送：
 
    ```bash
-   git remote add origin https://github.com/<owner>/dsh-qr-scanner.git
+   git remote add origin https://github.com/<owner>/AI-QR-code-scanning-.git
    git push -u origin main --tags
    ```
 
 5. 收录后，别人可以这样安装：
 
    ```bash
-   dsh plugin add github:<owner>/dsh-qr-scanner
+   dsh plugin add github:<owner>/AI-QR-code-scanning-
    ```
 
 > 市场收录只索引仓库元数据；安装是直连 github.com 克隆，所以仓库必须公开可访问。
 
 ---
 
-## 2. 发 npm（可选，但推荐）
+## 2. 发 npm（可选；当前包名不是合法的 npm 名）
 
-有了 npm 包，安装命令可以简写成 `dsh plugin --profile web add dsh-qr-scanner`。
+npm 规定**新包名不能含大写字母**，当前 `AI-QR-code-scanning-` 会被 `npm publish` 直接拒绝
+（`name can no longer contain capital letters`）。两条路：
+
+- **只走 GitHub 安装（推荐）**：`dsh plugin add github:mkingyixing/AI-QR-code-scanning-`，不需要 npm。
+- **确实要发 npm**：把 `package.json` 的 `name` 改成全小写（例如 `ai-qr-code-scanning`），
+  同时改 `cordis.patch.yml` 的 `name` 和 README 里的安装命令，再发布。
+
+如果要发，流程是：
 
 ```bash
 npm login
@@ -80,7 +87,6 @@ npm publish --access public
 
 注意：
 
-- 名字 `dsh-qr-scanner` 目前未被占用（2026-10-24 查证）。
 - 包里有 `sharp` / `koffi` 这类带原生二进制的依赖，npm 安装时由各自的 optionalDependencies 处理平台差异，不需要额外配置。
 - 首次发布前确认 `files` 字段只包含 `lib/ scripts/ cordis.patch.yml README* LICENSE`。
 
@@ -99,9 +105,9 @@ npm publish --access public
 在目标机器上：
 
 ```powershell
-dsh plugin --profile web add dsh-qr-scanner
+dsh plugin --profile web add AI-QR-code-scanning-
 # 或从源码：
-dsh plugin --profile web add github:<owner>/dsh-qr-scanner
+dsh plugin --profile web add github:<owner>/AI-QR-code-scanning-
 ```
 
 重启 DSH 后，对模型说「扫一下这张图」，应看到工具 `qr_scan` 被调用。
@@ -119,7 +125,7 @@ dsh plugin --profile web add github:<owner>/dsh-qr-scanner
 ## 4. 回滚 / 撤回
 
 ```bash
-npm unpublish dsh-qr-scanner@<version> --force   # npm 撤回（72 小时内可无痕）
+npm unpublish AI-QR-code-scanning-@<version> --force   # npm 撤回（72 小时内可无痕）
 git tag -d v<version> && git push origin :refs/tags/v<version>
 ```
 

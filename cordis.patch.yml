@@ -1,7 +1,7 @@
-# dsh-qr-scanner bundle layer: mount the QR/barcode tools.
+# AI-QR-code-scanning- bundle layer: mount the QR/barcode tools.
 - insert:
     - id: tool-qr-scanner
-      name: dsh-qr-scanner
+      name: AI-QR-code-scanning-
       config:
         outputDir: .dsh-qr
         maxInputBytes: 20971520

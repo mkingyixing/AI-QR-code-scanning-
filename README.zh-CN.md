@@ -1,4 +1,4 @@
-# dsh-qr-scanner
+# AI-QR-code-scanning-
 
 二维码 / 条码扫描工具，给 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）的模型加上"眼睛"：读图片、读屏幕、读摄像头，也能生成二维码。
 
@@ -35,11 +35,7 @@
 dsh plugin --profile web add github:mkingyixing/AI-QR-code-scanning-
 ```
 
-**从 npm（发布后）：**
-
-```bash
-dsh plugin --profile web add dsh-qr-scanner
-```
+**从 npm：** 暂未发布。npm 不接受含大写的包名，若要发包需改用全小写名（例如 `ai-qr-code-scanning`），详见 [PUBLISHING.md](PUBLISHING.md)。
 
 **从本地目录安装（桌面端，无需网络）：**
 
@@ -81,7 +77,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Uninstall
 ```yaml
 - insert:
     - id: tool-qr-scanner
-      name: dsh-qr-scanner
+      name: AI-QR-code-scanning-
       config:
         outputDir: .dsh-qr        # 生成/截图输出目录（相对会话工作区）
         maxInputBytes: 20971520   # 单张图片上限

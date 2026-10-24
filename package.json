@@ -1,5 +1,5 @@
 {
-  "name": "dsh-qr-scanner",
+  "name": "AI-QR-code-scanning-",
   "version": "0.1.0",
   "description": "二维码/条码扫描 for DeepSeek Harness — decode from image files, URLs, the live screen, or a webcam; generate QR codes. Powered by zxing-cpp (WASM).",
   "type": "module",

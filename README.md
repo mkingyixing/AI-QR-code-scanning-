@@ -1,4 +1,4 @@
-# dsh-qr-scanner
+# AI-QR-code-scanning-
 
 QR / barcode scanning for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (DSH): give the model eyes for codes — from image files, the live screen, or a webcam — plus QR generation.
 
@@ -33,11 +33,7 @@ From GitHub (recommended; add the `dsh-plugin` topic and the marketplace picks i
 dsh plugin --profile web add github:mkingyixing/AI-QR-code-scanning-
 ```
 
-From npm (after publishing):
-
-```bash
-dsh plugin --profile web add dsh-qr-scanner
-```
+From npm: not published yet. npm rejects uppercase package names, so publishing would need a lowercase name (e.g. `ai-qr-code-scanning`) — see [PUBLISHING.md](PUBLISHING.md).
 
 Local install (desktop profile, no network):
 
@@ -62,7 +58,7 @@ On the shared 10-image corpus (rotation, inversion, 78px thumbnail, blurry JPEG,
 ```yaml
 - insert:
     - id: tool-qr-scanner
-      name: dsh-qr-scanner
+      name: AI-QR-code-scanning-
       config:
         outputDir: .dsh-qr
         maxInputBytes: 20971520
