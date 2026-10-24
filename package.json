@@ -1,0 +1,67 @@
+{
+  "name": "dsh-qr-scanner",
+  "version": "0.1.0",
+  "description": "二维码/条码扫描 for DeepSeek Harness — decode from image files, URLs, the live screen, or a webcam; generate QR codes. Powered by zxing-cpp (WASM).",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "scripts",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh-CN.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "qrcode",
+    "qr",
+    "barcode",
+    "scanner",
+    "screenshot",
+    "二维码",
+    "扫码"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkingyixing/AI-QR-code-scanning-.git"
+  },
+  "homepage": "https://github.com/mkingyixing/AI-QR-code-scanning-#readme",
+  "bugs": {
+    "url": "https://github.com/mkingyixing/AI-QR-code-scanning-/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.0-0 <5.0.0-0",
+    "@deepseek-ai/dsh-system-prompt": ">=0.2.0-0 <0.3.0-0",
+    "@deepseek-ai/dsh-tools": ">=0.2.0-0 <0.3.0-0"
+  },
+  "dependencies": {
+    "koffi": "^3.3.3",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.35.5",
+    "zxing-wasm": "^3.1.6"
+  },
+  "scripts": {
+    "test": "node test/run.mjs"
+  }
+}

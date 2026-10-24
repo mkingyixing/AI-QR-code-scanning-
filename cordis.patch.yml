@@ -1,0 +1,8 @@
+# dsh-qr-scanner bundle layer: mount the QR/barcode tools.
+- insert:
+    - id: tool-qr-scanner
+      name: dsh-qr-scanner
+      config:
+        outputDir: .dsh-qr
+        maxInputBytes: 20971520
+        timeoutMs: 20000

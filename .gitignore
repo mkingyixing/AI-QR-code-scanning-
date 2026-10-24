@@ -1,0 +1,7 @@
+node_modules/
+test/fixtures/
+.dsh-qr/
+.npm-cache/
+*.tgz
+*.log
+npm-debug.log*
